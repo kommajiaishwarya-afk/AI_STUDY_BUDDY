@@ -1,0 +1,10 @@
+Flask
+google-genai
+python-dotenv
+Flask-Login
+reportlab
+python-docx
+gtts
+werkzeug
+streamlit
+groq
