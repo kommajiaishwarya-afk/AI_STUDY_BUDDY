@@ -27,7 +27,9 @@ load_dotenv()
 
 
 
-app.secret_key = os.getenv("SECRET_KEY", "secret")
+import streamlit as st
+
+SECRET_KEY = st.secrets.get("SECRET_KEY", "secret")
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
