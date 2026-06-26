@@ -1,9 +1,9 @@
 Flask
-gunicorn
-google-genai
-python-dotenv
 Flask-Login
+groq
+python-dotenv
+Werkzeug
 reportlab
 python-docx
-gtts
-werkzeug
+gTTS
+gunicorn
