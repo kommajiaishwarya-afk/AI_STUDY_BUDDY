@@ -86,18 +86,7 @@ class User(UserMixin):
         self.username = data[1]
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    con = db()
-    user = con.execute(
-        "SELECT * FROM users WHERE id=?",
-        (user_id,)
-    ).fetchone()
-    con.close()
-    
-    if user:
-        return User(user)
-    return None
+#
 
 
 # =====================
