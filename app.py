@@ -168,8 +168,17 @@ def save_history(topic, action, content):
 # AUTH
 # =====================
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
+import streamlit as st
+
+st.title("Register")
+
+username = st.text_input("Username")
+password = st.text_input("Password", type="password")
+
+if st.button("Register"):
+    con = db()
+    # save user here
+    st.success("Registered")
     if request.method == "POST":
         username = request.form.get("username")
         password = request.form.get("password")
