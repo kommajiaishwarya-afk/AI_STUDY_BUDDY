@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, send_file, redirect, url_for
+import streamlit as st
 from groq import Groq
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -25,7 +25,7 @@ import uuid
 
 load_dotenv()
 
-app = Flask(__name__)
+
 
 app.secret_key = os.getenv("SECRET_KEY", "secret")
 
