@@ -254,7 +254,6 @@ def home():
 # =====================
 
 @app.route("/generate", methods=["POST"])
-@login_required
 def generate_ai():
     topic = request.form.get("topic", "").strip()
     action = request.form.get("action", "").strip()
