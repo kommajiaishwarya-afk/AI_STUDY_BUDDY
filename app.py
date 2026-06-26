@@ -1,4 +1,4 @@
-import streamlit as st
+from flask import Flask, render_template, request, redirect, jsonify, send_file
 from groq import Groq
 from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -27,7 +27,11 @@ load_dotenv()
 
 
 
-import streamlit as st
+app = Flask(__name__)
+app.secret_key = SECRET_KEY
+
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 SECRET_KEY = st.secrets.get("SECRET_KEY", "secret")
 
