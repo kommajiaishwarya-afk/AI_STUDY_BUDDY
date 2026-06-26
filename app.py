@@ -32,6 +32,10 @@ login_manager.init_app(app)
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+DB = "database.db"
+
+os.makedirs("exports", exist_ok=True)
+
 
 # =====================
 # DATABASE
