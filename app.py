@@ -33,7 +33,7 @@ SECRET_KEY = st.secrets.get("SECRET_KEY", "secret")
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-login_manager.login_view = "login"
+#login_manager.login_view = "login"
 
 DB = "database.db"
 
