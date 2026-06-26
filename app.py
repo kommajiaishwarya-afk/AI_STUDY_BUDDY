@@ -10,6 +10,7 @@ from flask_login import (
     logout_user,
     current_user
 )
+
 from reportlab.pdfgen import canvas
 from docx import Document
 from gtts import gTTS
@@ -19,13 +20,9 @@ import os
 import uuid
 
 
-# =====================
-# CONFIG
-# =====================
-
 load_dotenv()
 
-
+SECRET_KEY = os.getenv("SECRET_KEY", "secret")
 
 app = Flask(__name__)
 app.secret_key = SECRET_KEY
@@ -33,15 +30,7 @@ app.secret_key = SECRET_KEY
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-SECRET_KEY = st.secrets.get("SECRET_KEY", "secret")
-
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-
-#login_manager.login_view = "login"
-
-DB = "database.db"
-
-os.makedirs("exports", exist_ok=True)
 
 
 # =====================
